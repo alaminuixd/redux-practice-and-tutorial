@@ -56,11 +56,12 @@ function cartReducer(state = initialState, action) {
     case UPDATE_QUANTITY:
       return {
         ...state,
-        cart: state.cart.map((item) =>
+        cart: state.cart.map((item) => {
+          console.log("My item: ", item);
           item.id === action.payload.id
             ? { ...item, quantity: action.payload.quantity }
-            : item
-        ),
+            : item;
+        }),
         total: state.cart.reduce(
           (sum, item) =>
             sum +
