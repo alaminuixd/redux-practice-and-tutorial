@@ -32,7 +32,6 @@ const updateQuantity = (itemId, quantity) => ({
 const readCart = () => ({
   type: READ_CART,
 }); // Action to trigger a read operation
-
 // Reducer
 function cartReducer(state = initialState, action) {
   switch (action.type) {
